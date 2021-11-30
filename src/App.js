@@ -12,10 +12,12 @@ class App extends Component {
           <input type="text" placeholder="Ingresa el término de búsqueda" />
         </div>
         <ul>
-          <li>
-            <a href={posts[0].url}><img src={posts[0].image } /></a>
-            <p>{ posts[0].title }</p>
-          </li>
+          {posts.map((post,index)=>
+          <li key={index}>
+            <a href={post.url}><img src={post.image } /></a>
+            <p>{ post.title }</p>
+          </li>)
+          }
         </ul>
       </div>
     )
